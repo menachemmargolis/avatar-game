@@ -23,25 +23,26 @@ air = Element.create(name: "Air", skill_1: "AirSlash", skill_2: "AirBall", skill
 # t.integer :element_id
 # t.string :nation
 
-# aang 
-# zuko 
-# katara
-# azula
-# iroh
-# ozai
-# bumi
-# toph
-# kora
-# tenzin
-# amon
-# lin 
-# jinora
+aang = Character.create(name: "Aang", element_id: air.id, nation: "Avatar")
+zuko = Character.create(name: "Zuko", element_id: fire.id, nation: "Fire Nation")
+katara = Character.create(name: "Katara", element_id: water.id, nation: "Water Tribe")
+azula = Character.create(name: "Azula", element_id: fire.id, nation: "Fire Nation")
+iroh = Character.create(name: "Iroh", element_id: fire.id, nation: "Fire Nation")
+ozai = Character.create(name: "Ozai", element_id: fire.id, nation: "Fire Nation")
+bumi = Character.create(name: "Bumi", element_id: earth.id, nation: "Earth Kingdom")
+toph = Character.create(name: "Toph", element_id: earth.id, nation: "Earth Kingdom")
+kora = Character.create(name: "Kora", element_id: water.id, nation: "Avatar")
+tenzin = Character.create(name: "Tenzin", element_id: air.id, nation: "Air Nomad")
+amon = Character.create(name: "Amon", element_id: water.id, nation: "Water Tribe")
+lin = Character.create(name: "Lin", element_id: earth.id, nation: "Earth Kingdom") 
+jinora = Character.create(name: "Jinora", element_id: air.id, nation: "Air Nomad")
 
 
 
 madiwa = User.create(name: "madiwa")
 menachem = User.create(name: "menachem")
 
-
-
+game1 = Game.create(user_id: madiwa.id, user2_id: menachem.id, character_id: toph.id, character_id2: iroh.id, result: false)
+game2 = Game.create(user_id: menachem.id, user2_id: madiwa.id, character_id: tenzin.id, character_id2: aang.id, result: false)
+game3 = Game.create(user_id: madiwa.id, user2_id: menachem.id, character_id: azula.id, character_id2: iroh.id, result: true)
 puts "📼 📼 📼 📼 SEEDED 📼 📼 📼 📼 "
