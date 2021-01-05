@@ -64,7 +64,9 @@ class Menu
       choose_skill
     end
 
-    def self.choose_skill
+    def choose_skill
+      user_skill_points = 0 
+      user2_skill_points = 0
       games = Game.last
       ci = Character.find_by(id: games.character_id)
       ei = Element.find_by(id: ci.element_id)
@@ -74,20 +76,36 @@ class Menu
       chosen_skills = prompt.select("choose your skill", ei.skill_1, ei.skill_2, ei.skill_3, ei.skill_4)
       chosen_skills_2 = [ei2.skill_1, ei2.skill_2, ei2.skill_3, ei2.skill_4]
       random_skill = chosen_skills_2.sample
-      create_fight = [chosen_skills, random_skill]
-      if create_fight[0] == "FireBall" && create_fight[1] == "waterWhip"
-        puts "you win"
+      if chosen_skills == ei.skill_1 
+      user_skill_points = 10 
+      elsif chosen_skills == ei.skill_2
+        user_skill_points = 5
+      elsif chosen_skills == ei.skill_3
+        user_skill_points = 25
+      elsif chosen_skills == ei.skill_4
+        user_skill_points = 40
       end
-      binding.pry
-      0
-    
-      # winner = ei.id < ei2.id
-      # result = true if winner == true 
-      # if result == true
-      # puts "you win" 
-      # elsif
-      # puts "you lose" 
-      # end
+      
+      if chosen_skills_2 == ei2.skill_1 
+        user2_skill_points = 10 
+        elsif chosen_skills_2 == ei2.skill_2
+          user2_skill_points = 5
+        elsif chosen_skills_2 == ei2.skill_3
+          user2_skill_points = 25
+        elsif chosen_skills_2 == ei2.skill_4
+          user2_skill_points = 40
+        end
+
+        if user_skill_points > user2_skill_points 
+        games.result = true
+        puts "you win!"
+        elsif user_skill_points == user2_skill_points 
+          games.result = nil
+          puts "it's a tie!"
+        else 
+          games.result = false
+          puts "you lose!"
+        end
   
     end
 
