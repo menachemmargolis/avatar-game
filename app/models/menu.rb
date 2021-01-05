@@ -50,6 +50,7 @@ class Menu
         menu.choice "choose a character",-> {choose_character}
         menu.choice "main menu",-> {menu_choice}
         menu.choice "switch user", -> {log_in}
+       # menu.choice "current game", ->{game_helper}
       end
     end
     
@@ -59,12 +60,27 @@ class Menu
       choose_a_character = prompt.select("choose a fighter", characters)
       random_user = User.all.sample
       random_character = Character.all.sample
-      create_game = Game.create(user_id: user.id, user2_id: random_user.id,  character_id: choose_a_character.id, character_id2: random_character.id)
-      game_helper
+      create_game = Game.create(user_id: user.id, user2_id: random_user.id, character_id: choose_a_character, character_id2: random_character)
+      choose_skill
     end
 
-    def game_helper
+    def self.choose_skill
       games = Game.last
-      choose_a_game = prompt.select("choose a game", games)
+      ci = Character.find_by(id: games.character_id)
+      ei = Element.find_by(id: ci.element_id)
+      ci2 = Character.find_by(id: games.character_id2)
+      ei2 = Element.find_by(id: ci2.element_id)
+      skills = [ei.skill_1, ei.skill_2, ei.skill_3, ei.skill_4]
+      choose_skills = prompt.select("choose your skill", skills)
+      winner = ei.id < ei2.id
+      result = true if winner == true 
+      if result == true
+      puts "you win" 
+      elsif
+      puts "you lose" 
+      end
+      binding.pry
     end
+
+      
 end

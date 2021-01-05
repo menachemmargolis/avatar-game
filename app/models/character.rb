@@ -8,7 +8,7 @@ class Character < ActiveRecord::Base
     end
 
     def self.all_names
-        self.all.map{|character|character}
+        self.all.map{|character|{character.name => character.id}}
     end
     
 end
