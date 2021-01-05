@@ -2,6 +2,7 @@ class Menu
     attr_reader :prompt
     attr_accessor :user
 
+    @@game = []
     def initialize
         @prompt = TTY::Prompt.new
     end
@@ -58,18 +59,12 @@ class Menu
       choose_a_character = prompt.select("choose a fighter", characters)
       random_user = User.all.sample
       random_character = Character.all.sample
-      create_game = Game.create(user_id: user.id, user2_id: random_user.id,  character_id: choose_a_character, character_id2: random_character.id )
+      create_game = Game.create(user_id: user.id, user2_id: random_user.id,  character_id: choose_a_character.id, character_id2: random_character.id)
+      game_helper
     end
-    # plants = Plant.all_names
-    # chosen_plant_id = prompt.select("Which plant do you want to adopt?", plants)
-    # affection = prompt.ask("From 1-10, how affectionate do you feel towards this plant?").to_i
-    # pp = PlantParenthood.create(plant_id: chosen_plant_id, person_id: user.id, affection: affection)
-    # puts "Congratulations! You have adopted #{pp.plant.species}!"
-    # sleep(1)
-    # main_screen
-    #  1. choose a plant -> display a list of plant names
-    #  2. create a new plant_parenthood between the user and the plant
-    
 
+    def game_helper
+      games = Game.last
+      choose_a_game = prompt.select("choose a game", games)
+    end
 end
-
