@@ -60,7 +60,7 @@ class Menu
       choose_a_character = prompt.select("choose a fighter", characters)
       random_user = User.all.sample
       random_character = Character.all.sample
-      create_game = Game.create(user_id: user.id, user2_id: random_user.id, character_id: choose_a_character, character_id2: random_character)
+      create_game = Game.create(user_id: user.id, user2_id: random_user.id, character_id: choose_a_character, character_id2: random_character.id)
       choose_skill
     end
 
@@ -70,16 +70,25 @@ class Menu
       ei = Element.find_by(id: ci.element_id)
       ci2 = Character.find_by(id: games.character_id2)
       ei2 = Element.find_by(id: ci2.element_id)
-      skills = [ei.skill_1, ei.skill_2, ei.skill_3, ei.skill_4]
-      choose_skills = prompt.select("choose your skill", skills)
-      winner = ei.id < ei2.id
-      result = true if winner == true 
-      if result == true
-      puts "you win" 
-      elsif
-      puts "you lose" 
+      skills = Element.all_skill
+      chosen_skills = prompt.select("choose your skill", ei.skill_1, ei.skill_2, ei.skill_3, ei.skill_4)
+      chosen_skills_2 = [ei2.skill_1, ei2.skill_2, ei2.skill_3, ei2.skill_4]
+      random_skill = chosen_skills_2.sample
+      create_fight = [chosen_skills, random_skill]
+      if create_fight[0] == "FireBall" && create_fight[1] == "waterWhip"
+        puts "you win"
       end
       binding.pry
+      0
+    
+      # winner = ei.id < ei2.id
+      # result = true if winner == true 
+      # if result == true
+      # puts "you win" 
+      # elsif
+      # puts "you lose" 
+      # end
+  
     end
 
       
