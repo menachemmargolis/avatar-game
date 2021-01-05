@@ -11,3 +11,9 @@ task :console do
   # open Pry console, similar to binding.pry
   Pry.start
 end
+
+desc "Start our app"
+task :start do
+  menu = Menu.new
+  menu.menu_choice
+end
