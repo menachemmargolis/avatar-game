@@ -86,27 +86,26 @@ class Menu
         user_skill_points = 40
       end
       
-      if chosen_skills_2 == ei2.skill_1 
+      if random_skill == ei2.skill_1 
         user2_skill_points = 10 
-        elsif chosen_skills_2 == ei2.skill_2
+        elsif random_skill == ei2.skill_2
           user2_skill_points = 5
-        elsif chosen_skills_2 == ei2.skill_3
+        elsif random_skill == ei2.skill_3
           user2_skill_points = 25
-        elsif chosen_skills_2 == ei2.skill_4
+        elsif random_skill == ei2.skill_4
           user2_skill_points = 40
         end
 
         if user_skill_points > user2_skill_points 
-        games.result = true
-        puts "you win!"
+          games.result = true
+          puts "you win!"
         elsif user_skill_points == user2_skill_points 
           games.result = nil
           puts "it's a tie!"
-        else 
+        else user_skill_points < user2_skill_points
           games.result = false
           puts "you lose!"
         end
-  
     end
 
       
