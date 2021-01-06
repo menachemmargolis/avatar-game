@@ -1,8 +1,10 @@
 User.destroy_all
+User2.destroy_all
 Game.destroy_all
 Character.destroy_all
 Element.destroy_all
 User.reset_pk_sequence
+User2.reset_pk_sequence
 Game.reset_pk_sequence
 Character.reset_pk_sequence
 Element.reset_pk_sequence

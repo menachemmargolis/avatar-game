@@ -1,6 +1,6 @@
 class Menu
     attr_reader :prompt
-    attr_accessor :user
+    attr_accessor :user, :user2
 
     @@game = []
     def initialize
@@ -22,7 +22,7 @@ class Menu
         name = @prompt.ask("choose another username")
       end
       self.user = User.create(name: name)
-      puts "welcom #{user.name}"
+      puts "welcome #{user.name}"
       main_screen
     end
 
@@ -102,29 +102,14 @@ class Menu
 
           if user_skill_points > user2_skill_points 
             puts "you win!"
-            games.result= "win"
+            games.update(result: "win")
           elsif user_skill_points == user2_skill_points
             puts "it's a tie!"
-            games.result= "tie"
+            games.update(result: "tie")
           else user_skill_points < user2_skill_points
             puts "you lose!"
-            games.result= "lose"
+            games.update(result: "lose")
           end
-
-
-          binding.pry
-          0
-
-        #   def fail_student(student, test_name)
-        #     testtofail= BoatingTest.all.find{|test| test.student.first_name == student.first_name && test.name == test_name}
-        #     if testtofail
-        #       testtofail.status= "failed"
-        #     else
-        #       BoatingTest.new(student, test_name, "failed", self)
-        #     end
-        #   end
-        
-        # end
 
       end
         
@@ -140,5 +125,7 @@ class Menu
         sleep(0.8)
         menu_choice
       end
-      
+      def player2
+
+      end
 end
