@@ -10,5 +10,7 @@ class Character < ActiveRecord::Base
     def self.all_names
         self.all.map{|character|{character.name => character.id}}
     end
+
+
     
 end

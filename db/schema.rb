@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 2021_01_04_190033) do
     t.integer "user2_id"
     t.integer "character_id"
     t.integer "character_id2"
-    t.boolean "result"
+    t.string "result"
   end
 
   create_table "users", force: :cascade do |t|

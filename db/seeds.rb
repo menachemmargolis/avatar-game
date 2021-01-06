@@ -39,10 +39,9 @@ jinora = Character.create(name: "Jinora", element_id: air.id, nation: "Air Nomad
 
 
 
-madiwa = User.create(name: "madiwa")
-menachem = User.create(name: "menachem")
 
-game1 = Game.create(user_id: madiwa.id, user2_id: menachem.id, character_id: toph.id, character_id2: iroh.id, result: false)
-game2 = Game.create(user_id: menachem.id, user2_id: madiwa.id, character_id: tenzin.id, character_id2: aang.id, result: false)
-game3 = Game.create(user_id: madiwa.id, user2_id: menachem.id, character_id: azula.id, character_id2: iroh.id, result: true)
+
+# game1 = Game.create(user_id: madiwa.id, user2_id: menachem.id, character_id: toph.id, character_id2: iroh.id, result: false)
+# game2 = Game.create(user_id: menachem.id, user2_id: madiwa.id, character_id: tenzin.id, character_id2: aang.id, result: false)
+# game3 = Game.create(user_id: madiwa.id, user2_id: menachem.id, character_id: azula.id, character_id2: iroh.id, result: true)
 puts "📼 📼 📼 📼 SEEDED 📼 📼 📼 📼 "
