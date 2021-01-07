@@ -49,6 +49,7 @@ class Menu
       sleep(1.3)
       
       puts "welcome fighter #{user.name}"
+      line_separator
       @prompt.select("choose an option") do |menu|
         menu.choice "start game",-> {game_instruction}
         menu.choice "logout",-> {main_menu}
@@ -73,6 +74,7 @@ class Menu
     end
 
     def choose_character
+      line_separator
       characters = Character.all_names
       choose_a_character = @prompt.select("choose a fighter", characters)
       random_user = User.all.sample
@@ -82,6 +84,7 @@ class Menu
     end
 
     def choose_skill
+      line_separator
         user1_hp = 100
         user2_hp = 100
         # user1_final_hp = user1_hp.clamp(0, 100)
@@ -169,7 +172,7 @@ class Menu
         puts "#{ci2.name} has #{user2_hp} Health, and #{user2_energy} Energy points"
 
           count += 1
-          sleep(5.5)
+          sleep(3.5)
         end
           if user1_hp > user2_hp
             puts "you win!"
@@ -186,6 +189,7 @@ class Menu
       end
 
       def play_again
+        line_separator
         @prompt.select("wouuld you like to play again") do |menu|
           menu.choice "yes",-> {choose_character}
           menu.choice "no",-> {exit_game}
@@ -194,6 +198,7 @@ class Menu
       end
 
       def user_stats
+        line_separator
         game_select = Game.all.select{|game|game.user_id == user.id}
         wins = game_select.select{|games|games.result == "win"}
         loses = game_select.select{|games|games.result == "lose"}
@@ -209,7 +214,7 @@ class Menu
 
 
       def delete_account
-
+        line_separator
         deleted_user =self.user
         #delete_games = Game.all.reject{|games|games if games.user_id == deleted_user.id}
         deleted_user.destroy
@@ -223,24 +228,29 @@ class Menu
         puts "goodbye fighter"
         exit
       end 
+      def line_separator
+        14.times do
+          print "🔥 🌊 🌪 🪨 "
+        end
+      end
       
       def banner
         
         puts "
  
-                                 .,I7778                                 .
-                                        .......+:,~~~:,?77777777O~:~+8I=                       ...
+                                                          .,I7778                                 
+                                          .......+:,~~~:,?77777777O~:~+8I=                       
                                         .....7,,,,~~~~,,,:7777777I:~~~Z:?                       
                                         ....~,,,,:~~~~,,,,,777777O7..=?~,==                       
-                                         .........IZZZ8,,,,,:~~~~,,,,,:77777O.....$:7,                       
-                                         .......777777:,,,,,~~~~~,,,,,,77777,
-                                         ......7777777,,,,,,~~~~~,,,,,,7778                                 
-                                         .....O77777ZO:,,,,,~~~~~,,,,,,ZO7...
-                                 ......DOO$...I77778=++,,,~~~~~~~~~,,,~Z+$...
-                                 .....8ZOZ78O7777778~,$,=:,:~~~~~~,:,,$,7O...
-                                 ....IZZZZ77877777778=7,ODDN=~~~:N$NM,D+Z7:..
-                                 ....ZZZZZ777O77I777IZ$=,,~7.?,=.$7:,~7I77...
-                                 ...,ZOZZ87777877Z77I7?Z,,,,,,,,,,,,,D777Z...
+                                         .........IZZZ8,,,,,|~~~~|,,,,:77777O.                       
+                                         .......777777:,,,,,|~~~~|,,,,,77777,
+                                         ......7777777,,,,,,|~~~~|,,,,,7778                                 
+                                         .....O77777ZO:,,,__|~~~~|__,,,ZO7...
+                                 ......DOO$...I77778=++,,,\\~~~~~~~~/,,~Z+$...
+                                  ....8ZOZ78O7777778~,$,=:,\\~~~~~ /:,,$,7O...
+                                  ....IZZZZ77877777778=7,ODD\\~~~ /N$NM,D+Z7:..
+                                 ....ZZZZZ777O77I777IZ$=,,~7.\\= /$7:,~7I77...
+                                 ...,ZOZZ87777877Z77I7?Z,,,,,,\\/,,,,,,D777Z...
                                  ....ZZOZZ777777777O$77IO,,,,$,~,,,,=77Z~....
                                  .....OZZZZZZ7777I$IO877D7~,+??I=,,O7I.......
                                  ......ZZOZZOO+?8Z77ZO7777ZI?,,,:D777Z.......
