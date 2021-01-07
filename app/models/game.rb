@@ -6,9 +6,5 @@ class Game < ActiveRecord::Base
       self.id
    end
 
-   def self.all_id
-      self.all.map{|games|games}
-   end
-
 
 end

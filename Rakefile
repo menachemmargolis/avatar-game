@@ -15,5 +15,5 @@ end
 desc "Start our app"
 task :start do
   menu = Menu.new
-  menu.menu_choice
+  menu.main_menu
 end
