@@ -53,7 +53,7 @@ class Menu
       @prompt.select("choose an option") do |menu|
         menu.choice "start game",-> {game_instruction}
         menu.choice "logout",-> {main_menu}
-        #menu.choice "current game", ->{game_helper}
+        
         menu.choice "see curent stats", -> {user_stats}
         menu.choice "delete account", ->{delete_account}
       end
@@ -111,15 +111,7 @@ class Menu
         chosen_skills_2 = [ei2.skill_1, ei2.skill_2, ei2.skill_3]
         random_skill = chosen_skills_2.sample
         random_skill = ei2.skill_4 if user2_energy >= 100
-# print "Please,select skill!"
-# chosen_skills = gets.chomp.to_s
-# case chosen_skills
-# when chosen_skills == ei.skill_1 then user1_skill_points = 20, user1_energy += 30, user1_heal = 0, user2_hp -= user1_skill_points
-# when  then print "This is February!"
-#     when 3 then print "This is March!"
-#     when 4 then print "This is April!"
-#     when 5 then print "This is May!"
-# end
+
 
         if chosen_skills == ei.skill_1 
           user1_skill_points = 20
@@ -218,7 +210,6 @@ class Menu
       def delete_account
         line_separator
         deleted_user =self.user
-        #delete_games = Game.all.reject{|games|games if games.user_id == deleted_user.id}
         deleted_user.destroy
         puts "YOUR ACCOUNT HAS BEEN DELETED!"
         sleep(0.8)
