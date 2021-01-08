@@ -233,48 +233,47 @@ class Menu
       def banner
         
         puts "
- 
-                                                          .,I7778                                 
-                                          .......+:,~~~:,?77777777O~:~+8I=                       
-                                        .....7,,,,~~~~,,,:7777777I:~~~Z:?                       
-                                        ....~,,,,:~~~~,,,,,777777O7..=?~,==                       
-                                         .........IZZZ8,,,,,|~~~~|,,,,:77777O.                       
-                                         .......777777:,,,,,|~~~~|,,,,,77777,
-                                         ......7777777,,,,,,|~~~~|,,,,,7778                                 
-                                         .....O77777ZO:,,,__|~~~~|__,,,ZO7...
-                                 ......DOO$...I77778=++,,,\\~~~~~~~~/,,~Z+$...
-                                  ....8ZOZ78O7777778~,$,=:,\\~~~~~ /:,,$,7O...
-                                  ....IZZZZ77877777778=7,ODD\\~~~ /N$NM,D+Z7:..
-                                 ....ZZZZZ777O77I777IZ$=,,~7.\\= /$7:,~7I77...
-                                 ...,ZOZZ87777877Z77I7?Z,,,,,,\\/,,,,,,D777Z...
-                                 ....ZZOZZ777777777O$77IO,,,,$,~,,,,=77Z~....
-                                 .....OZZZZZZ7777I$IO877D7~,+??I=,,O7I.......
-                                 ......ZZOZZOO+?8Z77ZO7777ZI?,,,:D777Z.......
-                                 ......$ZZZZD?:::::=7787D7ZZ8OZD??          .
-                                 ......ZZZZZ+~::::::~7$I787OZZD??,,..:IZZ....
-                                 .....ZZZZZZ===:~~I8O=:OZ77$77?Z,7~::::::::..
-                                 ......OZZZ8+?:87Z~::~=N$Z77$O??:~~:::::::::Z
-                                 .........,D+$7$~~:::::~:DOD7Z?++~:::::::::::
-                                          :O87:::::::~=+~D:,,,Z~::~:::::::::
-                                 ........~:??O?~:~::::Z:=,,,~,,,::~??~~~~~::~
-                                 .......,:???8?~?~~::O,~,,,,,,,,:???????????O
-                                 .......==????I?~~~:,,,:~,,:,,,,,????????Z.                                 
-                                 ....+~$:??????$?+7:?,,,,,,,$,,,,,8?????Z,
-                                 ...+~~:????????8?~,=,,?,,,,,,,,,,,,??$
-                                 ...=?:=????????$,,,,,,,:,,,,8,,,,,I,~
-                                 ...??~?????????Z=:,+,,,,O,,,,?,,,:,,,
-                                 ...7?????????$...+,,~,,,,$,,,:$I===$
-                                 ..:7???????+......?~,:,,,,=DN8==+7
-                                 ..?$$8$8O?:.,......7++=~ID$$$+$8
-                                 ..+$$$$Z          ......$8NNN+
-                                 .77$$?=          .......NDDOO
-                                 .+$7?                    D8OZ
-                                 DNO,                      ZO=
-                                77$$
-                               .I$$I
-                               NI$$
-                               DDDN
-                               NND+
-   "
+                                        ``````````                              
+                                    ```-/syddddhs+-```                          
+                                  ``-smMMMMMMMMMMMMNs-``                        
+                                 `.yMMMMMMMMMMMMMMMMMMy``                       
+                                `.mMMMMMMMMMMMMMMMMMMMMm.`                      
+                               ``dMMMMMMMM``````MMMMMMMMm``                     
+                              ``/MMMMMMMMM``````NMMMMMMMMs``                    
+                              ` hMMMMMMMMM      +MMMMMMMMN `                    
+                              ` NMMMMMM            ydMMMMMMM.`                    
+                             `` MMMMMMMN+`       +NMMMMMMM.```                  
+                           ``/hdMMMMMMMMMh-    -hMMMMMMMMMdho `                 
+                           ` mMMMMMMMNNMMMNo``oNMMNmmMMMMMMMN `                 
+                           ` yMMMMMm-``./hMMddMMh/.``-mMMMMMh `                 
+                            ``yMMMMh      /MMMMo`     sMMMMh.`                                  
+                            ``:ymMMh/-...-NMMM-.`.-/yNMmy:``                   
+                              ``.yMMMNNNNNMMMMNmmmNMMMh.``                     
+                               `.`yMMMMMMMMMMMMMMMMMMh.``                      
+                                ``/d//hNMMMMMMMMMMMMNh++h+``                     
+                                `-MMdyosdNMMMMMMmhsoymMM+``                     
+                               ````NMMMMmhssyhdyoshmMMMMN-```                    
+                           ``.-/ohdMMMMMMMMNy.`hNMMMMMMMMmhs/-.``                
+                        `./ydNMMMMMMMMMMMMMMdoMMMMMMMMMMMMMMNmy/``                                             
+                      ``:dMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMd:``            
+                     ``:NMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMN/``           
+                    ``/NMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMN/``          
+                   ``+NMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNo``         
+                 ```yMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMh``        
+             ``.-+hMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMd/-.``    
+            ``:ymMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMmh/``  
+            ``sMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMs``  
+          ``oNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNs.` 
+          ``/MMMMMMMMMMMMMMMMMMMMMMMMMMNMMMMMMMMMMNMMMMMMMMMMMMMMMMMMMMMMMMMMs``
+          ``sMMMMMMMMMMMMMMMMMMMMMMhhh./yNMMMMmo::yydMMMMMMMMMMMMMMMMMMMMMMd.` 
+           ``/mMMMMMMMMMMMMMMMMMMMM-.. `.oNMMm/` `--+MMMMMMMMMMMMMMMMMMMMN+``  
+            ``+dmdso+ossyhhNMMMMMMMMMsdMMMMMMMNhhMMMMMMMMMNhhysoo++shmdo.``   
+             `````````````:MMMMMMMMMMMMMMMMMMMMMMMMMMMMMM/``````````````     
+                         ` hMMMMMMMMMMMMMMMMMMMMMMMMMMMMd `                  
+                           .:oymMMMMMMMMMMMMMMMMMMNhs/.``                   
+                            ````.:+oyhhddddhyso/:.````                      
+                                 ``````````````   
+                                 "
+
       end
 end
