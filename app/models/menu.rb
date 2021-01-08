@@ -18,10 +18,10 @@ class Menu
    
     def sign_up
       name = @prompt.ask("choose a username")
-     while  User.find_by(name: name) || name = nil || name = ""
+      while  User.find_by(name: name) || name == "" || name == nil
         if User.find_by(name: name)
         puts "that name is already taken "
-        elsif name = nil || name = ""
+        elsif name == "" || name == nil
         puts "that is not a valid username, a username must contain at least one character " 
         end
         name = @prompt.ask("choose another username")
@@ -87,9 +87,6 @@ class Menu
       line_separator
         user1_hp = 100
         user2_hp = 100
-        # user1_final_hp = user1_hp.clamp(0, 100)
-        # user2_final_hp = user2_hp.clamp(0, 100)
-
         user1_skill_points = 0
         user1_energy = 0 
         user1_heal = 0
@@ -105,9 +102,9 @@ class Menu
       while count < 4
         system 'clear'
         chosen_skills = @prompt.select("choose your skill", ei.skill_1, ei.skill_2, ei.skill_3, ei.skill_4)
-        chosen_skills_2 = [ei2.skill_1, ei2.skill_2, ei2.skill_3, ei2.skill_4]
+        chosen_skills_2 = [ei2.skill_1, ei2.skill_2, ei2.skill_3]
         random_skill = chosen_skills_2.sample
-
+        random_skill = ei2.skill_4 if user2_energy >= 100
 # print "Please,select skill!"
 # chosen_skills = gets.chomp.to_s
 # case chosen_skills
@@ -120,18 +117,18 @@ class Menu
 
         if chosen_skills == ei.skill_1 
           user1_skill_points = 20
-          user1_energy += 30 
+          user1_energy += 40 
           user1_heal = 0
           user2_hp -= user1_skill_points
         elsif chosen_skills == ei.skill_2
-          user1_skill_points = 5
-          user1_energy += 50 
+          user1_skill_points = 10
+          user1_energy += 60 
           user1_heal = 30
           user2_hp -= user1_skill_points
           user1_hp += user1_heal
         elsif chosen_skills == ei.skill_3
           user1_skill_points = 30
-          user1_energy += 10 
+          user1_energy += 30 
           user1_heal = 10
           user2_hp -= user1_skill_points
           user1_hp += user1_heal
@@ -144,18 +141,18 @@ class Menu
 
         if random_skill == ei2.skill_1 
           user2_skill_points = 20
-          user2_energy += 30 
+          user2_energy += 40 
           user2_heal = 0
           user1_hp -= user2_skill_points
           elsif random_skill == ei2.skill_2
-            user2_skill_points = 5
-            user2_energy += 50 
+            user2_skill_points = 10
+            user2_energy += 60 
             user2_heal = 30
             user1_hp -= user2_skill_points
             user2_hp += user2_heal
           elsif random_skill == ei2.skill_3
             user2_skill_points = 30
-            user2_energy += 10 
+            user2_energy += 30 
             user2_heal = 10
             user1_hp -= user2_skill_points
             user2_hp += user2_heal
@@ -165,7 +162,6 @@ class Menu
             user2_heal = 0 
             user1_hp -= user2_skill_points
           end
-          
         puts "You chose #{ci.name} to use #{chosen_skills}"
         puts "#{ci.name} has #{user1_hp} Health, and #{user1_energy} Energy points"
         puts "The enemy#{ci2.name} used #{random_skill}"
