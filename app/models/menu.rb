@@ -69,6 +69,7 @@ class Menu
       whoever has the most health points after three rounds wins. "
       @prompt.select("press enter to start game") do |menu|
        menu.choice "enter", -> {choose_character}
+       line
       end
 
     end
@@ -201,6 +202,7 @@ class Menu
           menu.choice "wins", -> {puts "you have #{wins.count} games won"}
           menu.choice "loses", -> {puts "you have #{loses.count} games lost"}
           menu.choice "ties", -> {puts "you have #{ties.count} games tied"}
+          line_separator_2
           menu.choice "main menu", -> {main_screen}
         end
         user_stats
@@ -222,7 +224,7 @@ class Menu
         exit
       end 
       def line_separator
-        14.times do
+        18.times do
           print "🔥 🌊 🌪 🪨 "
         end
       end
@@ -332,6 +334,11 @@ class Menu
         ▐░▌       ▐░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░▌      ▐░░▌▐░░░░░░░░░░▌                ▐░▌
          ▀         ▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀        ▀▀  ▀▀▀▀▀▀▀▀▀▀                  ▀ "
       end
-
+      
+      def line
+       156.times do
+        print"-"
+       end
+      end
       
 end
